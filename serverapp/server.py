@@ -5,35 +5,30 @@ import os
 from datetime import datetime
 import logging
 
-# Configure the logger
+
 logging.basicConfig(
-    level=logging.DEBUG,  # Set the logging level
-    format='%(asctime)s - %(levelname)s - %(message)s',  # Log format
+    level=logging.DEBUG,  
+    format='%(asctime)s - %(levelname)s - %(message)s', 
     handlers=[
-        logging.FileHandler("app.log"),  # Log to a file
-        logging.StreamHandler()  # Log to console
+        logging.FileHandler("app.log"),  
+        logging.StreamHandler() 
     ]
 )
 
 logger = logging.getLogger(__name__)
 
-
-
 BASE_DIRECTORY = 'shared'
-
     
 class NetworkAddress:
     HOST = "0.0.0.0"
     PORT = 40500
-       
-       
+           
 class AudioServerTCPHandler(socketserver.BaseRequestHandler):
     
     def __ini__(self):
         self.dataInfos = {}
         self.foldername = ''
     
-        
     def create_daily_folder(self):
         today = datetime.today()
         self.foldername = today.strftime("%Y-%m-%d")
