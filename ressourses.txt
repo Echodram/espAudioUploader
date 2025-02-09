@@ -4,3 +4,8 @@
 2 - INSTALL MICROPYTHON
 	https://docs.sunfounder.com/projects/esp32-starter-kit/en/latest/micropython/python_start/install_micropython.html
 
+3 - DOCKER CONTAINER IMAGE FOR SERVERAPP:
+	docker pull mardoche/audiokyria:latest
+
+4 - DOCKER CONTAINER IMAGE FOR WEBAPP :
+	docker push mardoche/webwav:tagname
