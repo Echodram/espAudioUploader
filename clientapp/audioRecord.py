@@ -66,13 +66,13 @@ class AudioRecord:
         return o
     
 
-    def recordAudio(self, filename = ' '):
+    def recordAudio(self, filename):
         '''
             The period parameters correspond to the time while the 
         '''
         self.filename = filename
         wav_file = filename
-        wav = open("/sd/{}".format(wav_file), "wb")
+        wav = open(f"/sd/{filename}", "wb")
         # create header for WAV file and write to SD card
         wav_header = self.create_wav_header(Config.SAMPLE_RATE_IN_HZ,
                                        Config.WAV_SAMPLE_SIZE_IN_BITS,
@@ -102,8 +102,7 @@ class AudioRecord:
 
         wav.close()
         
-#audio = AudioRecord()
-#audio.recordAudio()
+
 
 
 

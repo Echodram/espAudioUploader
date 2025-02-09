@@ -1,8 +1,8 @@
-from machine import Pin, ADC , Timer, RTC, SDCard
+from machine import Pin, ADC , Timer
 import time
 import socket
 import uos
-import wave
+import wave 
 import hashlib
 import network
 
@@ -10,10 +10,10 @@ wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 
 class Settings:
-    WIFI_SSID = "MTNMIFI-EAC1"
-    PASSWORD = "30681387"
-    HOST = '192.168.1.101'
-    PORT = 8000
+    WIFI_SSID = "t"
+    PASSWORD = "123456789"
+    HOST = '34.121.82.35'
+    PORT = 40500
     
 class ClientEsp32:
     
@@ -36,13 +36,7 @@ class ClientEsp32:
         self.clientsocket = None
         
         self.connectToWifi()
-        
-    def load_config(self):
-        self.host = Settings.HOST
-        self.port = Settings.PORT
-        self.ssid = Settings.WIFI_SSID
-        self.password = Settings.PASSWORD
-        
+           
     def connect_to_server(self):
         self.clientsocket = socket.socket(self.family, self._type)
         self.clientsocket.connect((Settings.HOST, Settings.PORT))
@@ -57,13 +51,10 @@ class ClientEsp32:
     def send_data(self, data):
         self.clientsocket.send(data)
         
-    def change_connections_settings(self):
-        """
-            This function will implement remote configuration of settings
-        """
         
     def connectToWifi(self):
         while True:
+            time.sleep(5)
             print("____ATTEMPTING TO CONNECT TO WIFI_____")
             try :
                 wlan.connect(Settings.WIFI_SSID, Settings.PASSWORD)
@@ -71,13 +62,8 @@ class ClientEsp32:
                     print('_____WIFI CONNECTED_____')
                     break
             except :
-                time.sleep(5)
                 pass
     
-    def scanWifi(self):
-        networks = wlan.scan()
-        for network in networks :
-            print(f"SSID : {network[0]}")
     
     def test(self):
         self.connect_to_server()
@@ -112,37 +98,41 @@ class ClientEsp32:
             
         print('Connected to the server ...')
         
-        with  wave.open(f'/sd/{filename}', 'rb') as audio:
+        audio = wave.open(f'/sd/{filename}', 'rb')
             #Envoyer les informations du fichier
-            print('File correctly opened')
-            chunk_size = 4*1024
-            chunk_index = 0
-            params = audio.getparams()
-            (nchannels, samplewidth, framerate,nframes,comptype,compname) = params[:6]
-            numck = self.getChunknum(nframes, chunk_size)
-            audioParamsToSend = {'nchannels' : nchannels,
-                                'samplewidth': samplewidth,
-                                'framerate'  : framerate,
-                                'nframes'    : nframes,
-                                'comptype'   : comptype,
-                                'compname'   : compname,
-                                'numchunk'   : numck
-                                 }
-            
-            self.send_data(str(audioParamsToSend).encode())
-            print("file's header sended")
-            while True:
-              chunk = audio.readframes(4*chunk_size)
-              if not chunk:
-                  if chunk_index >= numck:
-                      print('file successfully sended')
-                  break
-              self.send_data(chunk)
-              chunk_index += 4  
-            self.close_connection()
-            self.isconnected = False
-        self.serverResponse()            
-   
+        print('File correctly opened')
+        chunk_size = 4*1024
+        chunk_index = 0
+        params = audio.getparams()
+        (nchannels, samplewidth, framerate,nframes,comptype,compname) = params[:6]
+        numck = self.getChunknum(nframes, chunk_size)
+        date = time.localtime()
+        audioParamsToSend = {'nchannels' : nchannels,
+                            'samplewidth': samplewidth,
+                            'framerate'  : framerate,
+                            'nframes'    : nframes,
+                            'comptype'   : comptype,
+                            'compname'   : compname,
+                            'numchunk'   : numck,
+                             'filename' : filename,
+                             'date'     : f'{date[0]}__{date[1]}__{date[2]}'
+                             }
+        
+        self.send_data(str(audioParamsToSend).encode())
+        print("file's header sended")
+        while True:
+          chunk = audio.readframes(4*chunk_size)
+          if not chunk:
+              if chunk_index >= numck:
+                  print('file successfully sended')
+              break
+          self.send_data(chunk)
+          chunk_index += 4  
+        self.close_connection()
+        self.isconnected = False
+        self.serverResponse()
+    
+
                  
 
 

@@ -1,0 +1,6 @@
+1 -INSTALL ESPTOOL
+	https://www.flamingo-tech.nl/2021/03/21/installing-and-using-esptools/
+
+2 - INSTALL MICROPYTHON
+	https://docs.sunfounder.com/projects/esp32-starter-kit/en/latest/micropython/python_start/install_micropython.html
+
