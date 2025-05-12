@@ -8,7 +8,7 @@ HOST = '34.121.82.35'
 PORT = 40500
 
 while True:
-    wlan.connect('AWILLBE', 'lut##997')
+    wlan.connect('', '')
     if wlan.isconnected() :
         print('wifi is connected')
         break

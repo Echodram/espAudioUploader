@@ -18,30 +18,30 @@ class Settings:
     
 class ClientEsp32:
     
-   """
-    Overview
-            -The ClientEsp32 class manages the connection and communication between an ESP32 client and a server for transmitting audio files.
-            It handles network connections, data transmission, and audio parameter management.
+    """
+        Overview
+        -The ClientEsp32 class manages the connection and communication between an ESP32 client and a server for transmitting audio files.
+        It handles network connections, data transmission, and audio parameter management.
 
         Key Features
-            -Connection Management: Connects to a server using TCP sockets, with methods for establishing and closing connections.
-            -Data Transmission: Sends audio file data and receives server responses, including error handling for connection issues.
-            -Wi-Fi Connectivity: Attempts to connect to Wi-Fi using provided credentials.
-            -Audio Parameter Handling: Retrieves and organizes audio file parameters for transmission to the server.
-            -File Sending: Reads audio files and sends their data in chunks to the server, with progress monitoring.
+        -Connection Management: Connects to a server using TCP sockets, with methods for establishing and closing connections.
+        -Data Transmission: Sends audio file data and receives server responses, including error handling for connection issues.
+        -Wi-Fi Connectivity: Attempts to connect to Wi-Fi using provided credentials.
+        -Audio Parameter Handling: Retrieves and organizes audio file parameters for transmission to the server.
+        -File Sending: Reads audio files and sends their data in chunks to the server, with progress monitoring.
         Methods
-            - __init__(self, family, _type, timeout): Initializes the client with socket parameters and sets up initial states.
-            - connect_to_server(): Establishes a connection to the specified server.
-            - receive_data(buffer): Receives data from the server with error handling.
-            - close_connection(): Closes the current socket connection.
-            - reconnect(): Attempts to reconnect to the server after closing the connection.
-            - send_data(data): Sends data to the server, handling errors and reconnection attempts.
-            - connectToWifi(): Connects to Wi-Fi, retrying until successful.
-            - test(): Tests the connection by sending a "TEST" message to the server.
-            - serverResponse(): Sends a "SENDED" message and waits for a server acknowledgment.
-            - getChunknum(nframes): Calculates the number of chunks needed for the given number of frames.
-            - setAudioParams(audioStream, filename): Sets and returns audio parameters for transmission.
-            - send_file(filename): Connects to the server and sends the specified audio file in chunks while monitoring for transmission issues.
+        - __init__(self, family, _type, timeout): Initializes the client with socket parameters and sets up initial states.
+        - connect_to_server(): Establishes a connection to the specified server.
+        - receive_data(buffer): Receives data from the server with error handling.
+        - close_connection(): Closes the current socket connection.
+        - reconnect(): Attempts to reconnect to the server after closing the connection.
+        - send_data(data): Sends data to the server, handling errors and reconnection attempts.
+        - connectToWifi(): Connects to Wi-Fi, retrying until successful.
+        - test(): Tests the connection by sending a "TEST" message to the server.
+        - serverResponse(): Sends a "SENDED" message and waits for a server acknowledgment.
+        - getChunknum(nframes): Calculates the number of chunks needed for the given number of frames.
+        - setAudioParams(audioStream, filename): Sets and returns audio parameters for transmission.
+        - send_file(filename): Connects to the server and sends the specified audio file in chunks while monitoring for transmission issues.
     """
     
     def __init__(self, family=socket.AF_INET, _type=socket.SOCK_STREAM, timeout=10):
