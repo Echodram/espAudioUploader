@@ -11,3 +11,8 @@ USAGE OF THE PROJECT
 
 4 - DOCKER CONTAINER IMAGE FOR WEBAPP :
 	docker pull mardoche/webwav:tagname
+
+5- RUN IMAGE SERVERAPP: 
+	docker run -d --name webwav -v path/to/shared_folder:/app/shared -p 5000:5000 webwav
+	docker run -d --name audiokyria -v path/to/shared_folder:/app/shared -p 40500:40500 audiokyria
+
