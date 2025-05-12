@@ -4,10 +4,33 @@ from machine import Pin
 from machine import I2S
 from machine import SDCard
 
-sd = SDCard(slot=2,mosi = 15,sck = 14,cs = 13,miso = 2)
+sd = SDCard(slot=2, mosi = 15,sck = 14,cs = 13,miso = 2)
 uos.mount(sd, "/sd")
 
 class Config :
+    """
+    Overview:
+        The Config class defines configuration parameters for audio recording and playback using an ESP32. 
+        It includes settings for pin assignments, audio format, sample rate, and buffer sizes.
+
+    Key Attributes
+        Pin Configuration:
+            SCK_PIN: Pin number for the clock signal.
+            WS_PIN: Pin number for the word select signal.
+            SD_PIN: Pin number for the data signal.
+            I2S_ID: Identifier for the I2S interface.
+        Audio Configuration:
+            WAV_FILE: Name of the WAV file to be recorded.
+            RECORD_TIME_IN_SECONDS: Duration of the audio recording in seconds.
+            WAV_SAMPLE_SIZE_IN_BITS: Bit depth of the audio samples (e.g., 32 bits).
+            FORMAT: Audio format (mono or stereo).
+            SAMPLE_RATE_IN_HZ: Sample rate for audio recording (e.g., 22050 Hz).
+        Derived Parameters:
+            NUM_CHANNELS: Number of audio channels based on the selected format.
+            WAV_SAMPLE_SIZE_IN_BYTES: Size of each sample in bytes.
+            RECORDING_SIZE_IN_BYTES: Total size of the recording buffer calculated based on recording duration, sample rate, and sample size.
+    """
+    
     SCK_PIN = 18
     WS_PIN = 25
     SD_PIN = 32
@@ -30,6 +53,24 @@ class Config :
     )
 
 class AudioRecord:
+    """
+    Overview
+        The AudioRecorder class captures audio input using the I2S interface and saves it as a WAV file. It constructs the WAV file header, 
+        records audio data, and manages file writing to an SD card.
+
+    Key Methods
+        *__init__(self)
+            -Initializes the I2S audio input with specified configuration parameters (pins, sample rate, etc.).
+            -Prepares an empty filename for the recorded audio.
+        *create_wav_header(self, sampleRate, bitsPerSample, num_channels, num_samples)
+            -Generates a WAV file header based on the provided audio parameters.
+            -Returns a byte sequence representing the WAV header.
+        *recordAudio(self, filename)
+            -Records audio for a specified duration and saves it to a WAV file on the SD card.
+            -Creates the WAV file header and writes it to the file.
+            -Continuously reads audio data from the microphone and writes it to the file until the specified recording size is reached or an interruption occurs.
+            Handles exceptions during recording and ensures proper file closure.
+    """
     def __init__(self):
         
         self.audio_in = I2S(
@@ -67,20 +108,14 @@ class AudioRecord:
     
 
     def recordAudio(self, filename):
-        '''
-            The period parameters correspond to the time while the 
-        '''
         self.filename = filename
         wav_file = filename
         wav = open(f"/sd/{filename}", "wb")
-        # create header for WAV file and write to SD card
         wav_header = self.create_wav_header(Config.SAMPLE_RATE_IN_HZ,
                                        Config.WAV_SAMPLE_SIZE_IN_BITS,
                                        Config.NUM_CHANNELS,
-                                       Config.SAMPLE_RATE_IN_HZ * Config.RECORD_TIME_IN_SECONDS,)
-        
+                                       Config.SAMPLE_RATE_IN_HZ * Config.RECORD_TIME_IN_SECONDS,)  
         num_bytes_written = wav.write(wav_header)
-        
         mic_samples = bytearray(10000)
         mic_samples_mv = memoryview(mic_samples)
         num_sample_bytes_written_to_wav = 0
@@ -93,7 +128,6 @@ class AudioRecord:
                     num_bytes_to_write = min(
                         num_bytes_read_from_mic, Config.RECORDING_SIZE_IN_BYTES - num_sample_bytes_written_to_wav
                     )
-                    
                     num_bytes_written = wav.write(mic_samples_mv[:num_bytes_to_write])
                     num_sample_bytes_written_to_wav += num_bytes_written
             print("==========  DONE RECORDING ==========")

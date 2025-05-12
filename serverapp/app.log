@@ -1,0 +1,122 @@
+2025-04-14 19:57:31,855 - INFO - Server started at 0.0.0.0:40500
+2025-04-14 19:59:41,485 - INFO - Server started at 0.0.0.0:40500
+2025-04-15 10:06:33,079 - INFO - Server started at 192.168.1.100:40500
+2025-04-15 10:07:49,010 - INFO - TEST
+2025-04-15 10:07:49,010 - INFO - incoming file from esp32
+2025-04-15 10:07:49,026 - INFO - files header not already received
+2025-04-15 10:09:03,013 - INFO - 
+2025-04-15 10:09:03,013 - INFO - incoming file from esp32
+2025-04-15 10:09:03,027 - INFO - files header not already received
+2025-04-15 10:09:03,064 - INFO - 
+2025-04-15 10:09:03,064 - INFO - incoming file from esp32
+2025-04-15 10:09:03,064 - INFO - files header not already received
+2025-04-15 10:09:03,066 - INFO - 
+2025-04-15 10:09:03,066 - INFO - incoming file from esp32
+2025-04-15 10:09:03,066 - INFO - files header not already received
+2025-04-15 10:09:03,069 - INFO - 
+2025-04-15 10:09:03,069 - INFO - incoming file from esp32
+2025-04-15 10:09:03,069 - INFO - files header not already received
+2025-04-15 10:09:03,070 - INFO - 
+2025-04-15 10:09:03,070 - INFO - incoming file from esp32
+2025-04-15 10:09:03,070 - INFO - files header not already received
+2025-04-15 10:09:03,073 - INFO - 
+2025-04-15 10:09:03,073 - INFO - incoming file from esp32
+2025-04-15 10:09:03,073 - INFO - files header not already received
+2025-04-15 10:09:06,568 - INFO - 
+2025-04-15 10:09:06,568 - INFO - incoming file from esp32
+2025-04-15 10:09:06,568 - INFO - files header not already received
+2025-04-15 10:09:06,568 - INFO - 
+2025-04-15 10:09:06,568 - INFO - incoming file from esp32
+2025-04-15 10:09:06,568 - INFO - files header not already received
+2025-04-15 10:09:06,568 - INFO - 
+2025-04-15 10:09:06,568 - INFO - incoming file from esp32
+2025-04-15 10:09:06,568 - INFO - files header not already received
+2025-04-15 10:09:06,583 - INFO - 
+2025-04-15 10:09:06,583 - INFO - incoming file from esp32
+2025-04-15 10:09:06,583 - INFO - files header not already received
+2025-04-15 10:09:06,583 - INFO - 
+2025-04-15 10:09:06,583 - INFO - incoming file from esp32
+2025-04-15 10:09:06,583 - INFO - files header not already received
+2025-04-15 10:09:06,583 - INFO - 
+2025-04-15 10:09:06,583 - INFO - incoming file from esp32
+2025-04-15 10:09:06,583 - INFO - files header not already received
+2025-04-15 10:09:08,273 - INFO - 
+2025-04-15 10:09:08,273 - INFO - incoming file from esp32
+2025-04-15 10:09:08,273 - INFO - files header not already received
+2025-04-15 10:09:08,273 - INFO - 
+2025-04-15 10:09:08,273 - INFO - incoming file from esp32
+2025-04-15 10:09:08,280 - INFO - files header not already received
+2025-04-15 10:10:10,707 - INFO - TEST
+2025-04-15 10:10:10,707 - INFO - incoming file from esp32
+2025-04-15 10:10:10,708 - INFO - files header not already received
+2025-04-15 10:11:24,535 - INFO - 
+2025-04-15 10:11:24,535 - INFO - incoming file from esp32
+2025-04-15 10:11:24,536 - INFO - files header not already received
+2025-04-15 10:11:24,536 - INFO - 
+2025-04-15 10:11:24,540 - INFO - incoming file from esp32
+2025-04-15 10:11:24,540 - INFO - files header not already received
+2025-04-15 10:11:24,543 - INFO - 
+2025-04-15 10:11:24,543 - INFO - incoming file from esp32
+2025-04-15 10:11:24,543 - INFO - files header not already received
+2025-04-15 10:11:24,546 - INFO - 
+2025-04-15 10:11:24,546 - INFO - incoming file from esp32
+2025-04-15 10:11:24,548 - INFO - files header not already received
+2025-04-15 10:11:24,552 - INFO - 
+2025-04-15 10:11:24,552 - INFO - incoming file from esp32
+2025-04-15 10:11:24,554 - INFO - files header not already received
+2025-04-15 10:11:24,567 - INFO - 
+2025-04-15 10:11:24,567 - INFO - incoming file from esp32
+2025-04-15 10:11:24,567 - INFO - files header not already received
+2025-04-15 10:11:33,276 - INFO - 
+2025-04-15 10:11:33,276 - INFO - incoming file from esp32
+2025-04-15 10:11:33,278 - INFO - files header not already received
+2025-04-15 10:11:33,278 - INFO - 
+2025-04-15 10:11:33,278 - INFO - incoming file from esp32
+2025-04-15 10:11:33,283 - INFO - files header not already received
+2025-04-15 10:11:33,286 - INFO - 
+2025-04-15 10:11:33,286 - INFO - incoming file from esp32
+2025-04-15 10:11:33,287 - INFO - files header not already received
+2025-04-15 10:11:33,290 - INFO - 
+2025-04-15 10:11:33,292 - INFO - incoming file from esp32
+2025-04-15 10:11:33,292 - INFO - files header not already received
+2025-04-15 10:11:33,294 - INFO - 
+2025-04-15 10:11:33,294 - INFO - incoming file from esp32
+2025-04-15 10:11:33,294 - INFO - files header not already received
+2025-04-15 10:11:33,294 - INFO - 
+2025-04-15 10:11:33,294 - INFO - incoming file from esp32
+2025-04-15 10:11:33,294 - INFO - files header not already received
+2025-04-15 10:11:34,847 - INFO - 
+2025-04-15 10:11:34,847 - INFO - incoming file from esp32
+2025-04-15 10:11:34,847 - INFO - files header not already received
+2025-04-15 10:11:34,850 - INFO - 
+2025-04-15 10:11:34,850 - INFO - incoming file from esp32
+2025-04-15 10:11:34,850 - INFO - files header not already received
+2025-04-15 10:11:34,856 - INFO - 
+2025-04-15 10:11:34,856 - INFO - incoming file from esp32
+2025-04-15 10:11:34,859 - INFO - files header not already received
+2025-04-15 10:11:34,859 - INFO - 
+2025-04-15 10:11:34,859 - INFO - incoming file from esp32
+2025-04-15 10:11:34,859 - INFO - files header not already received
+2025-04-15 10:13:02,277 - INFO - TEST
+2025-04-15 10:13:02,277 - INFO - incoming file from esp32
+2025-04-15 10:13:02,277 - INFO - files header not already received
+2025-04-15 10:13:02,401 - INFO - {'samplewidth': 4, 'nframes': 661500, 'compname': 'not compressed', 'numchunk': 162, 'nchannels': 1, 'comptype': 'NONE', 'framerate': 22050, 'filename': '2025__4__15_10H12.wav', 'date': '2025__4__15'}
+2025-04-15 10:13:02,413 - INFO - new folder created
+2025-04-15 10:13:02,414 - INFO - 1
+2025-04-15 10:13:02,414 - INFO - wave file dowloading...
+2025-04-15 10:13:21,371 - INFO - Download complete
+2025-04-15 10:13:21,388 - INFO - SENDED
+2025-04-15 10:13:21,389 - INFO - incoming file from esp32
+2025-04-15 10:13:21,390 - INFO - files header not already received
+2025-04-15 10:13:21,391 - INFO - CLIENT RESPONSE : SENDED
+2025-04-15 10:13:58,201 - INFO - TEST
+2025-04-15 10:13:58,201 - INFO - incoming file from esp32
+2025-04-15 10:13:58,201 - INFO - files header not already received
+2025-04-15 10:13:58,593 - INFO - {'samplewidth': 4, 'nframes': 661500, 'compname': 'not compressed', 'numchunk': 162, 'nchannels': 1, 'comptype': 'NONE', 'framerate': 22050, 'filename': '2025__4__15_10H13.wav', 'date': '2025__4__15'}
+2025-04-15 10:13:58,593 - INFO - 1
+2025-04-15 10:13:58,593 - INFO - wave file dowloading...
+2025-04-15 10:14:14,428 - INFO - Download complete
+2025-04-15 10:14:14,462 - INFO - SENDED
+2025-04-15 10:14:14,462 - INFO - incoming file from esp32
+2025-04-15 10:14:14,462 - INFO - files header not already received
+2025-04-15 10:14:14,462 - INFO - CLIENT RESPONSE : SENDED

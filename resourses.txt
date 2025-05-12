@@ -1,3 +1,5 @@
+USAGE OF THE PROJECT
+
 1 -INSTALL ESPTOOL
 	https://www.flamingo-tech.nl/2021/03/21/installing-and-using-esptools/
 
@@ -8,4 +10,4 @@
 	docker pull mardoche/audiokyria:latest
 
 4 - DOCKER CONTAINER IMAGE FOR WEBAPP :
-	docker push mardoche/webwav:tagname
+	docker pull mardoche/webwav:tagname
